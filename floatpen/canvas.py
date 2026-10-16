@@ -9,7 +9,7 @@ gi.require_version('Gtk', '3.0')
 gi.require_version('Gdk', '3.0')
 from gi.repository import Gtk, Gdk, GLib, GdkPixbuf
 
-from epicmarker.models import (
+from floatpen.models import (
     PenStroke, HighlighterStroke, LineShape, ArrowShape,
     RectangleShape, EllipseShape, TextShape
 )
@@ -48,8 +48,8 @@ class CanvasWindow(Gtk.Window):
         self._connect_events()
 
     def _setup_window(self):
-        self.set_title("EpicMarker Overlay")
-        self.set_role("epicmarker-overlay")
+        self.set_title("FloatPen Overlay")
+        self.set_role("floatpen-overlay")
         self.set_decorated(False)
         self.set_app_paintable(True)
         self.set_keep_above(True)
@@ -470,7 +470,7 @@ class CanvasWindow(Gtk.Window):
         shot_dir = os.path.expanduser("~/Pictures/Screenshots")
         os.makedirs(shot_dir, exist_ok=True)
         timestamp = time.strftime("%Y%m%d_%H%M%S")
-        filename = f"epicmarker_{timestamp}.png"
+        filename = f"floatpen_{timestamp}.png"
         filepath = os.path.join(shot_dir, filename)
 
         surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, self.screen_w, self.screen_h)

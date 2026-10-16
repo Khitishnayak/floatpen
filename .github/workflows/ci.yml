@@ -33,7 +33,7 @@ jobs:
 
     - name: Lint with flake8
       run: |
-        flake8 epicmarker tests --count --select=E9,F63,F7,F82 --show-source --statistics
+        flake8 floatpen tests --count --select=E9,F63,F7,F82 --show-source --statistics
 
     - name: Run unit tests under Xvfb
       run: |

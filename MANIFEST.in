@@ -3,6 +3,6 @@ include README.md
 include run.sh
 include install.sh
 include pyproject.toml
-recursive-include epicmarker *.css
+recursive-include floatpen *.css
 recursive-include assets *
 recursive-include tests *.py

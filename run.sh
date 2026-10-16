@@ -4,4 +4,4 @@ export PYTHONPATH="$DIR:$PYTHONPATH"
 if [ -n "$WAYLAND_DISPLAY" ] && [ -z "$GDK_BACKEND" ]; then
     export GDK_BACKEND=x11
 fi
-exec python3 "$DIR/epicmarker/main.py" "$@"
+exec python3 "$DIR/floatpen/main.py" "$@"

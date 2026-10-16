@@ -25,7 +25,7 @@ DEFAULT_CONFIG = {
     "palette": DEFAULT_PALETTE,
 }
 
-CONFIG_DIR = os.path.expanduser("~/.config/epicmarker")
+CONFIG_DIR = os.path.expanduser("~/.config/floatpen")
 CONFIG_FILE = os.path.join(CONFIG_DIR, "config.json")
 
 

@@ -1,6 +1,6 @@
-# Contributing to EpicMarker
+# Contributing to FloatPen
 
-Thank you for your interest in contributing to **EpicMarker**! We welcome all contributions, including bug reports, feature requests, documentation improvements, and code enhancements.
+Thank you for your interest in contributing to **FloatPen**! We welcome all contributions, including bug reports, feature requests, documentation improvements, and code enhancements.
 
 ---
 
@@ -18,8 +18,8 @@ Thank you for your interest in contributing to **EpicMarker**! We welcome all co
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Khitishnayak/epicmarker.git
-   cd epicmarker
+   git clone https://github.com/Khitishnayak/floatpen.git
+   cd floatpen
    ```
 
 2. Run directly in development mode:

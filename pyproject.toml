@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "epicmarker"
+name = "floatpen"
 version = "1.0.0"
-description = "Lightweight, responsive desktop marker and screen annotation tool for Linux like Epic Pen"
+description = "Floating desktop marker and screen annotation tool for Linux like Epic Pen"
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
@@ -16,6 +16,7 @@ keywords = [
     "screen-annotation",
     "desktop-marker",
     "epic-pen",
+    "floatpen",
     "linux",
     "whiteboard",
     "presentation",
@@ -44,16 +45,16 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Khitishnayak/epicmarker"
-Repository = "https://github.com/Khitishnayak/epicmarker.git"
-Issues = "https://github.com/Khitishnayak/epicmarker/issues"
+Homepage = "https://github.com/Khitishnayak/floatpen"
+Repository = "https://github.com/Khitishnayak/floatpen.git"
+Issues = "https://github.com/Khitishnayak/floatpen/issues"
 
 [project.scripts]
-epicmarker = "epicmarker.main:main"
+floatpen = "floatpen.main:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["epicmarker*"]
+include = ["floatpen*"]
 
 [tool.setuptools.package-data]
-epicmarker = ["*.css"]
+floatpen = ["*.css"]

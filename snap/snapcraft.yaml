@@ -1,9 +1,9 @@
-name: epicmarker-app
+name: floatpen
 base: core24
 version: '1.0.0'
-summary: Desktop marker and screen annotation tool like Epic Pen
+summary: Floating desktop marker and screen annotation tool like Epic Pen
 description: |
-  EpicMarker is a lightweight, responsive desktop marker and screen annotation
+  FloatPen is a lightweight, responsive desktop marker and screen annotation
   tool for Linux. It allows drawing, highlighting, placing arrows and shapes,
   and writing text notes directly over any live application, desktop, video player,
   or browser with instant click-through toggling.
@@ -20,9 +20,9 @@ grade: stable
 confinement: strict
 
 apps:
-  epicmarker:
-    command: usr/bin/epicmarker
-    desktop: usr/share/applications/epicmarker.desktop
+  floatpen:
+    command: usr/bin/floatpen
+    desktop: usr/share/applications/floatpen.desktop
     extensions: [gnome]
     plugs:
       - desktop
@@ -33,7 +33,7 @@ apps:
       - home
 
 parts:
-  epicmarker:
+  floatpen:
     plugin: dump
     source: .
     stage-packages:
@@ -46,31 +46,31 @@ parts:
     override-build: |
       craftctl default
       install -d $CRAFT_PART_INSTALL/usr/bin
-      install -d $CRAFT_PART_INSTALL/usr/lib/python3/dist-packages/epicmarker
+      install -d $CRAFT_PART_INSTALL/usr/lib/python3/dist-packages/floatpen
       install -d $CRAFT_PART_INSTALL/usr/share/applications
       install -d $CRAFT_PART_INSTALL/usr/share/icons/hicolor/256x256/apps
 
-      cp -r epicmarker/* $CRAFT_PART_INSTALL/usr/lib/python3/dist-packages/epicmarker/
-      cp assets/epicmarker.png $CRAFT_PART_INSTALL/usr/share/icons/hicolor/256x256/apps/epicmarker.png
+      cp -r floatpen/* $CRAFT_PART_INSTALL/usr/lib/python3/dist-packages/floatpen/
+      cp assets/floatpen.png $CRAFT_PART_INSTALL/usr/share/icons/hicolor/256x256/apps/floatpen.png
 
-      cat << 'EOF' > $CRAFT_PART_INSTALL/usr/bin/epicmarker
+      cat << 'EOF' > $CRAFT_PART_INSTALL/usr/bin/floatpen
       #!/usr/bin/env bash
       if [ -n "$WAYLAND_DISPLAY" ] && [ -z "$GDK_BACKEND" ]; then
           export GDK_BACKEND=x11
       fi
-      exec python3 -m epicmarker.main "$@"
+      exec python3 -m floatpen.main "$@"
       EOF
-      chmod +x $CRAFT_PART_INSTALL/usr/bin/epicmarker
+      chmod +x $CRAFT_PART_INSTALL/usr/bin/floatpen
 
-      cat << 'EOF' > $CRAFT_PART_INSTALL/usr/share/applications/epicmarker.desktop
+      cat << 'EOF' > $CRAFT_PART_INSTALL/usr/share/applications/floatpen.desktop
       [Desktop Entry]
-      Name=EpicMarker
-      Comment=Desktop marker and screen annotation tool like Epic Pen
-      Exec=epicmarker
-      Icon=/usr/share/icons/hicolor/256x256/apps/epicmarker.png
+      Name=FloatPen
+      Comment=Floating desktop marker and screen annotation tool like Epic Pen
+      Exec=floatpen
+      Icon=/usr/share/icons/hicolor/256x256/apps/floatpen.png
       Terminal=false
       Type=Application
       Categories=Utility;Graphics;
-      Keywords=screen;marker;draw;pen;epic;annotation;presentation;whiteboard;
+      Keywords=screen;marker;draw;pen;epic;annotation;presentation;whiteboard;floating;
       StartupNotify=true
       EOF

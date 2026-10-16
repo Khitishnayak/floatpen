@@ -7,7 +7,7 @@ gi.require_version('Gtk', '3.0')
 gi.require_version('Gdk', '3.0')
 from gi.repository import Gtk, Gdk, GLib
 
-from epicmarker.icons import IconWidget, hex_to_rgba
+from floatpen.icons import IconWidget, hex_to_rgba
 
 
 class ColorSwatch(Gtk.DrawingArea):
@@ -121,8 +121,8 @@ class ToolbarWindow(Gtk.Window):
         self._load_position()
 
     def _setup_window(self):
-        self.set_title("EpicMarker")
-        self.set_role("epicmarker-toolbar")
+        self.set_title("FloatPen")
+        self.set_role("floatpen-toolbar")
         self.set_decorated(False)
         self.set_app_paintable(True)
         self.set_keep_above(True)

@@ -1,23 +1,23 @@
-# EpicMarker 🖊️
+# FloatPen 🖊️
 
 <p align="center">
-  <img src="assets/epicmarker.png" width="128" height="128" alt="EpicMarker Logo" />
+  <img src="assets/floatpen.png" width="128" height="128" alt="FloatPen Logo" />
 </p>
 
 <p align="center">
-  <strong>A lightweight, responsive desktop marker and screen annotation tool for Linux inspired by Epic Pen.</strong>
+  <strong>A lightweight, responsive floating desktop marker and screen annotation tool for Linux inspired by Epic Pen.</strong>
 </p>
 
 <p align="center">
-  <a href="https://github.com/Khitishnayak/epicmarker/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
+  <a href="https://github.com/Khitishnayak/floatpen/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
   <img src="https://img.shields.io/badge/Python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-brightgreen.svg" alt="Python Version">
   <img src="https://img.shields.io/badge/Platform-Linux%20(X11%20%2F%20Wayland)-orange.svg" alt="Platform: Linux">
-  <a href="https://github.com/Khitishnayak/epicmarker/actions/workflows/ci.yml"><img src="https://github.com/Khitishnayak/epicmarker/actions/workflows/ci.yml/badge.svg" alt="CI Status"></a>
+  <a href="https://github.com/Khitishnayak/floatpen/actions/workflows/ci.yml"><img src="https://github.com/Khitishnayak/floatpen/actions/workflows/ci.yml/badge.svg" alt="CI Status"></a>
 </p>
 
 ---
 
-**EpicMarker** lets you draw, highlight, place arrows & shapes, and write text notes directly over any live application, desktop, video player, slide deck, or browser with instant click-through toggling.
+**FloatPen** lets you draw, highlight, place arrows & shapes, and write text notes directly over any live application, desktop, video player, slide deck, or browser with instant click-through toggling.
 
 ---
 
@@ -50,7 +50,7 @@
   - **Undo (`Ctrl+Z`)** & **Redo (`Ctrl+Y`)**
   - **Hide / Show Ink (Eye icon)**: Temporarily hide annotations to inspect the clean screen below, then restore them with a single click.
   - **Clear All (`Ctrl+K`)**: Clears screen with undo capability.
-  - **Screenshot / Save (`Ctrl+S`)**: Saves current annotations/board to `~/Pictures/Screenshots/epicmarker_<timestamp>.png` and automatically copies the image to the system clipboard.
+  - **Screenshot / Save (`Ctrl+S`)**: Saves current annotations/board to `~/Pictures/Screenshots/floatpen_<timestamp>.png` and automatically copies the image to the system clipboard.
 - **🪟 Floating Draggable & Collapsible Toolbar**:
   - Modern glassmorphic dark theme (`#18181b` with subtle borders and shadows).
   - Drag handle to position the palette anywhere on your screens.
@@ -62,29 +62,29 @@
 
 ### Option 1: Ubuntu / Debian Package (.deb)
 
-Download and install the official package directly from [Releases](https://github.com/Khitishnayak/epicmarker/releases/latest):
+Download and install the official package directly from [Releases](https://github.com/Khitishnayak/floatpen/releases/latest):
 
 ```bash
 # Download latest deb package
-wget https://github.com/Khitishnayak/epicmarker/releases/latest/download/epicmarker_1.0.0_all.deb
+wget https://github.com/Khitishnayak/floatpen/releases/latest/download/floatpen_1.0.0_all.deb
 
 # Install
-sudo apt install ./epicmarker_1.0.0_all.deb
+sudo apt install ./floatpen_1.0.0_all.deb
 ```
 Or simply double-click the `.deb` file in your file manager to install through the **Ubuntu App Center**.
 
 ### Option 2: Quick Install from Source (Git)
 
 ```bash
-git clone https://github.com/Khitishnayak/epicmarker.git
-cd epicmarker
+git clone https://github.com/Khitishnayak/floatpen.git
+cd floatpen
 ./install.sh
 ```
 
 ### Option 3: Pip / Pipx Install
 
 ```bash
-pip install git+https://github.com/Khitishnayak/epicmarker.git
+pip install git+https://github.com/Khitishnayak/floatpen.git
 ```
 
 ---

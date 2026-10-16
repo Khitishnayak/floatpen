@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-"""EpicMarker - Desktop Marker and Screen Annotation Tool for Linux."""
+#!/usr/bin/env bash
+"""FloatPen - Floating Desktop Marker and Screen Annotation Tool for Linux."""
 
 import os
 import sys
@@ -13,11 +13,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
-from epicmarker.app import EpicMarkerApp
+from floatpen.app import FloatPenApp
 
 
 def main():
-    app = EpicMarkerApp()
+    app = FloatPenApp()
     app.run()
 
 

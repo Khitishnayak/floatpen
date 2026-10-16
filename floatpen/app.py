@@ -1,4 +1,4 @@
-"""Main application coordinator for EpicMarker."""
+"""Main application coordinator for FloatPen."""
 
 import os
 import signal
@@ -7,13 +7,13 @@ gi.require_version('Gtk', '3.0')
 gi.require_version('Gdk', '3.0')
 from gi.repository import Gtk, Gdk, GLib
 
-from epicmarker.config import Config
-from epicmarker.canvas import CanvasWindow
-from epicmarker.toolbar import ToolbarWindow
-from epicmarker.hotkeys import GlobalHotkeyManager
+from floatpen.config import Config
+from floatpen.canvas import CanvasWindow
+from floatpen.toolbar import ToolbarWindow
+from floatpen.hotkeys import GlobalHotkeyManager
 
 
-class EpicMarkerApp:
+class FloatPenApp:
     def __init__(self):
         self.config = Config()
         self._load_styles()
@@ -50,7 +50,7 @@ class EpicMarkerApp:
         self.toolbar.show_all()
         self.hotkeys.start()
 
-        print("[EpicMarker] Application started.")
+        print("[FloatPen] Application started.")
         print("  - Toggle Draw/Pointer: Alt+D, Ctrl+Shift+A, or toolbar button")
         print("  - Exit: Click 'X' on toolbar or Ctrl+C")
         try:

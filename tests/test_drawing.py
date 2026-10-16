@@ -12,7 +12,7 @@ if BASE_DIR not in sys.path:
 # Set backend before importing GTK
 os.environ["GDK_BACKEND"] = "x11"
 
-from epicmarker.models import (
+from floatpen.models import (
     PenStroke, HighlighterStroke, LineShape, ArrowShape,
     RectangleShape, EllipseShape, TextShape, BatchAction,
     distance_point_to_segment
