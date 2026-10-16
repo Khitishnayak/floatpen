@@ -1,0 +1,123 @@
+/* EpicMarker High-End Dark UI Theme */
+
+window.toolbar-window {
+    background-color: transparent;
+}
+
+.toolbar-container {
+    background-color: rgba(24, 24, 27, 0.94);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 8px 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.toolbar-collapsed {
+    padding: 6px;
+}
+
+/* Tool Buttons */
+button.tool-btn {
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 1px 0px;
+    color: #e4e4e7;
+    transition: all 120ms ease-in-out;
+}
+
+button.tool-btn:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+}
+
+button.tool-btn:active {
+    background-color: rgba(255, 255, 255, 0.18);
+}
+
+button.tool-btn.active {
+    background-color: #3b82f6;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
+}
+
+/* Primary Mode Switcher (Pointer vs Draw) */
+button.mode-btn {
+    border-radius: 10px;
+    padding: 6px;
+    margin: 2px 0px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 150ms ease;
+}
+
+button.mode-btn.pointer-active {
+    background-color: rgba(16, 185, 129, 0.22);
+    border-color: #10b981;
+    color: #34d399;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.35);
+}
+
+button.mode-btn.draw-active {
+    background-color: rgba(59, 130, 246, 0.25);
+    border-color: #3b82f6;
+    color: #60a5fa;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+}
+
+/* Action Buttons */
+button.action-btn {
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    padding: 4px;
+    margin: 1px 0px;
+    color: #a1a1aa;
+    transition: all 120ms ease;
+}
+
+button.action-btn:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+    color: #f4f4f5;
+}
+
+button.action-btn.danger:hover {
+    background-color: rgba(239, 68, 68, 0.25);
+    color: #f87171;
+}
+
+/* Separators */
+separator.tool-sep {
+    background-color: rgba(255, 255, 255, 0.10);
+    margin: 4px 4px;
+    min-height: 1px;
+    min-width: 1px;
+}
+
+/* Grip handle */
+.drag-grip {
+    padding: 4px 0px;
+}
+
+/* Text Input popup on Canvas */
+.canvas-text-entry {
+    background-color: rgba(24, 24, 27, 0.95);
+    color: #ffffff;
+    border: 2px solid #3b82f6;
+    border-radius: 8px;
+    padding: 6px 10px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* Toast message */
+.toast-window {
+    background-color: rgba(24, 24, 27, 0.96);
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    border-radius: 12px;
+    padding: 10px 18px;
+    color: #f4f4f5;
+    font-size: 13px;
+    font-weight: 500;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
