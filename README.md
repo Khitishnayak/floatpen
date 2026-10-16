@@ -60,7 +60,20 @@
 
 ## 🚀 Installation & Setup
 
-### Option 1: Quick Install (Git)
+### Option 1: Ubuntu / Debian Package (.deb)
+
+Download and install the official package directly from [Releases](https://github.com/Khitishnayak/epicmarker/releases/latest):
+
+```bash
+# Download latest deb package
+wget https://github.com/Khitishnayak/epicmarker/releases/latest/download/epicmarker_1.0.0_all.deb
+
+# Install
+sudo apt install ./epicmarker_1.0.0_all.deb
+```
+Or simply double-click the `.deb` file in your file manager to install through the **Ubuntu App Center**.
+
+### Option 2: Quick Install from Source (Git)
 
 ```bash
 git clone https://github.com/Khitishnayak/epicmarker.git
@@ -68,14 +81,10 @@ cd epicmarker
 ./install.sh
 ```
 
-This installs `epicmarker` into `~/.local/bin` and adds the application launcher and high-res icon to your desktop menu.
-
-### Option 2: Pip Install
+### Option 3: Pip / Pipx Install
 
 ```bash
-git clone https://github.com/Khitishnayak/epicmarker.git
-cd epicmarker
-pip install .
+pip install git+https://github.com/Khitishnayak/epicmarker.git
 ```
 
 ---

@@ -1,0 +1,76 @@
+name: epicmarker
+base: core24
+version: '1.0.0'
+summary: Desktop marker and screen annotation tool like Epic Pen
+description: |
+  EpicMarker is a lightweight, responsive desktop marker and screen annotation
+  tool for Linux. It allows drawing, highlighting, placing arrows and shapes,
+  and writing text notes directly over any live application, desktop, video player,
+  or browser with instant click-through toggling.
+
+  Key Features:
+  - Instant Click-Through Pointer Mode (annotate while interacting with apps)
+  - Vector Pen with smooth Bezier curves
+  - Translucent Highlighter, Eraser, Line, Arrow, Rectangle, Circle, and Text
+  - Instant Whiteboard & Blackboard digital boards
+  - Global hotkeys (Alt+D, Ctrl+Shift+A, F8)
+  - One-click screenshot capture and clipboard copy
+
+grade: stable
+confinement: strict
+
+apps:
+  epicmarker:
+    command: usr/bin/epicmarker
+    desktop: usr/share/applications/epicmarker.desktop
+    extensions: [gnome]
+    plugs:
+      - desktop
+      - desktop-legacy
+      - wayland
+      - x11
+      - unity7
+      - home
+
+parts:
+  epicmarker:
+    plugin: dump
+    source: .
+    stage-packages:
+      - python3
+      - python3-gi
+      - python3-gi-cairo
+      - gir1.2-gtk-3.0
+      - libcairo2
+      - libx11-6
+    override-build: |
+      craftctl default
+      install -d $CRAFT_PART_INSTALL/usr/bin
+      install -d $CRAFT_PART_INSTALL/usr/lib/python3/dist-packages/epicmarker
+      install -d $CRAFT_PART_INSTALL/usr/share/applications
+      install -d $CRAFT_PART_INSTALL/usr/share/icons/hicolor/256x256/apps
+
+      cp -r epicmarker/* $CRAFT_PART_INSTALL/usr/lib/python3/dist-packages/epicmarker/
+      cp assets/epicmarker.png $CRAFT_PART_INSTALL/usr/share/icons/hicolor/256x256/apps/epicmarker.png
+
+      cat << 'EOF' > $CRAFT_PART_INSTALL/usr/bin/epicmarker
+      #!/usr/bin/env bash
+      if [ -n "$WAYLAND_DISPLAY" ] && [ -z "$GDK_BACKEND" ]; then
+          export GDK_BACKEND=x11
+      fi
+      exec python3 -m epicmarker.main "$@"
+      EOF
+      chmod +x $CRAFT_PART_INSTALL/usr/bin/epicmarker
+
+      cat << 'EOF' > $CRAFT_PART_INSTALL/usr/share/applications/epicmarker.desktop
+      [Desktop Entry]
+      Name=EpicMarker
+      Comment=Desktop marker and screen annotation tool like Epic Pen
+      Exec=epicmarker
+      Icon=/usr/share/icons/hicolor/256x256/apps/epicmarker.png
+      Terminal=false
+      Type=Application
+      Categories=Utility;Graphics;
+      Keywords=screen;marker;draw;pen;epic;annotation;presentation;whiteboard;
+      StartupNotify=true
+      EOF
