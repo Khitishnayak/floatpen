@@ -1,4 +1,4 @@
-name: epicmarker
+name: epicmarker-app
 base: core24
 version: '1.0.0'
 summary: Desktop marker and screen annotation tool like Epic Pen
