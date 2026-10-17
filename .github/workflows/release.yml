@@ -1,0 +1,86 @@
+name: Multi-Platform Release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows:
+    name: Build Windows App
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller pycairo
+
+      - name: Bundle Windows package
+        shell: bash
+        run: |
+          mkdir -p dist_win/floatpen
+          cp -r floatpen/* dist_win/floatpen/
+          cp -r assets dist_win/
+          cp LICENSE dist_win/
+          cat << 'EOF' > dist_win/FloatPen.bat
+          @echo off
+          setlocal
+          cd /d "%~dp0"
+          python -m floatpen.main %*
+          EOF
+          cd dist_win && zip -r ../floatpen-windows-x64.zip .
+
+      - name: Upload Windows Asset to Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: floatpen-windows-x64.zip
+
+  build-macos:
+    name: Build macOS App
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install pycairo pyobjc-framework-Cocoa
+
+      - name: Bundle macOS package
+        run: |
+          mkdir -p dist_mac/floatpen
+          cp -r floatpen/* dist_mac/floatpen/
+          cp -r assets dist_mac/
+          cp LICENSE dist_mac/
+          cat << 'EOF' > dist_mac/FloatPen.command
+          #!/usr/bin/env bash
+          DIR="$(cd "$(dirname "$0")" && pwd)"
+          cd "$DIR"
+          python3 -m floatpen.main "$@"
+          EOF
+          chmod +x dist_mac/FloatPen.command
+          cd dist_mac && zip -r ../floatpen-macos-universal.zip .
+
+      - name: Upload macOS Asset to Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: floatpen-macos-universal.zip
