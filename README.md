@@ -134,9 +134,9 @@ FloatPen is an active open-source project and welcomes community contributors!
 | Platform | Engine Backend | Click-Through API | Status | Contributor Task |
 |---|---|---|---|---|
 | **🐧 Linux** | GTK 3 / Cairo | `gdk_window_input_shape_combine_region` | **Live (v1.0.1)** | Feature additions & Wayland testing |
-| **🍏 macOS** | Cocoa / PyObjC | `[nsWindow setIgnoresMouseEvents:YES]` | **In Progress** | [Help Wanted #1](https://github.com/Khitishnayak/floatpen/issues) |
-| **🪟 Windows** | Win32 / ctypes | `WS_EX_LAYERED \| WS_EX_TRANSPARENT` | **In Progress** | [Help Wanted #2](https://github.com/Khitishnayak/floatpen/issues) |
-| **📦 Packaging** | Homebrew / Winget / Flatpak | CLI / App Store manifests | **Help Wanted** | [Help Wanted #3](https://github.com/Khitishnayak/floatpen/issues) |
+| **🍏 macOS** | Cocoa / PyObjC | `[nsWindow setIgnoresMouseEvents:YES]` | **In Progress** | [Help Wanted #1](https://github.com/Khitishnayak/floatpen/issues/1) |
+| **🪟 Windows** | Win32 / ctypes | `WS_EX_LAYERED \| WS_EX_TRANSPARENT` | **In Progress** | [Help Wanted #2](https://github.com/Khitishnayak/floatpen/issues/2) |
+| **📦 Packaging** | Homebrew / Winget / Flatpak | CLI / App Store manifests | **Help Wanted** | [Help Wanted #3](https://github.com/Khitishnayak/floatpen/issues/3) |
 
 Looking for a place to start? Pick any issue tagged [`good first issue`](https://github.com/Khitishnayak/floatpen/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) or [`help wanted`](https://github.com/Khitishnayak/floatpen/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and check our [CONTRIBUTING.md](CONTRIBUTING.md) guide!
 
