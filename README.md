@@ -11,8 +11,11 @@
 <p align="center">
   <a href="https://github.com/Khitishnayak/floatpen/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
   <img src="https://img.shields.io/badge/Python-3.9%20%7C%203.10%20%7C%203.11%20%7C%203.12-brightgreen.svg" alt="Python Version">
-  <img src="https://img.shields.io/badge/Platform-Linux%20(X11%20%2F%20Wayland)-orange.svg" alt="Platform: Linux">
+  <img src="https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20(WIP)%20%7C%20Windows%20(WIP)-orange.svg" alt="Platform Support">
   <a href="https://github.com/Khitishnayak/floatpen/actions/workflows/ci.yml"><img src="https://github.com/Khitishnayak/floatpen/actions/workflows/ci.yml/badge.svg" alt="CI Status"></a>
+  <a href="https://github.com/Khitishnayak/floatpen/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"><img src="https://img.shields.io/github/issues/Khitishnayak/floatpen/good%20first%20issue?color=7057ff&label=Good%20First%20Issues" alt="Good First Issues"></a>
+  <a href="https://github.com/Khitishnayak/floatpen/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22"><img src="https://img.shields.io/github/issues/Khitishnayak/floatpen/help%20wanted?color=008672&label=Help%20Wanted" alt="Help Wanted"></a>
+  <a href="http://makeapullrequest.com"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"></a>
 </p>
 
 ---
@@ -121,6 +124,21 @@ pip install git+https://github.com/Khitishnayak/floatpen.git
 - **X11 / XWayland transparent overlay** with `input_shape_combine_region` for instantaneous click-through switching.
 - **libX11 ctypes daemon** for global hotkey grabbing across all workspaces.
 - **Zero heavy dependencies**: Starts in < 0.2s with ~35MB RAM consumption.
+
+---
+
+## 🗺️ Multi-Platform Roadmap & Contributing
+
+FloatPen is an active open-source project and welcomes community contributors!
+
+| Platform | Engine Backend | Click-Through API | Status | Contributor Task |
+|---|---|---|---|---|
+| **🐧 Linux** | GTK 3 / Cairo | `gdk_window_input_shape_combine_region` | **Live (v1.0.1)** | Feature additions & Wayland testing |
+| **🍏 macOS** | Cocoa / PyObjC | `[nsWindow setIgnoresMouseEvents:YES]` | **In Progress** | [Help Wanted #1](https://github.com/Khitishnayak/floatpen/issues) |
+| **🪟 Windows** | Win32 / ctypes | `WS_EX_LAYERED \| WS_EX_TRANSPARENT` | **In Progress** | [Help Wanted #2](https://github.com/Khitishnayak/floatpen/issues) |
+| **📦 Packaging** | Homebrew / Winget / Flatpak | CLI / App Store manifests | **Help Wanted** | [Help Wanted #3](https://github.com/Khitishnayak/floatpen/issues) |
+
+Looking for a place to start? Pick any issue tagged [`good first issue`](https://github.com/Khitishnayak/floatpen/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22) or [`help wanted`](https://github.com/Khitishnayak/floatpen/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22) and check our [CONTRIBUTING.md](CONTRIBUTING.md) guide!
 
 ---
 
